@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Soccer News</string>
+    <string name="title_home">News</string>
+    <string name="title_dashboard">Favorites</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="textview">Flamengo X Palmeiras</string>
+    <string name="textview1">As meninas do flamengo ganharam do palmeiras na copa do brasil.</string>
+    <string name="buttonNews">Button</string>
+    <string name="favorite_icon">Favorite icon</string>
+    <string name="share_icon">Share icon</string>
+</resources>
