@@ -2,18 +2,20 @@ package lucianofcm.click.soccernews;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.List;
+
+import lucianofcm.click.soccernews.data.ApiNews;
 import lucianofcm.click.soccernews.databinding.ActivityMainBinding;
+import retrofit2.Call;
+import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,12 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard)
+                R.id.navigation_home, R.id.navigation_views2)
                 .build();
 
         NavController navController = getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
     }
 
     @NonNull

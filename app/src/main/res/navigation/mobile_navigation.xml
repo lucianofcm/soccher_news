@@ -9,12 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="lucianofcm.click.soccernews.ui.news.NewsFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="lucianofcm.click.soccernews.ui.favorites.FavoritesFragment"
+        android:id="@+id/navigation_views2"
+        android:name="lucianofcm.click.soccernews.ui.news.NewsFragment2"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_news2" >
+    </fragment>
 
 </navigation>

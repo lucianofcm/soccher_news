@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/activity_main.xml" value="0.26145833333333335" />
+        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/activity_main.xml" value="0.19438444924406048" />
         <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/fragment_favorites.xml" value="0.11197916666666667" />
         <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/fragment_news.xml" value="0.11197916666666667" />
+        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/fragment_news2.xml" value="0.24" />
         <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/fragment_notifications.xml" value="0.11197916666666667" />
-        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/news_item.xml" value="0.2754782700075322" />
+        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/item_news.xml" value="0.2086956590966153" />
+        <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/layout/news_item.xml" value="0.2086956590966153" />
         <entry key="..\:/DESENV/APLIC_PESSOAL/SoccerNews/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11197916666666667" />
       </map>
     </option>
@@ -17,5 +19,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2086956590966153" />
+      </ProjectState>
+    </option>
   </component>
 </project>

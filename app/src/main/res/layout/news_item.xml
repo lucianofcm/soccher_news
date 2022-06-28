@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="320dp"
-    android:layout_margin="8dp">
+    android:layout_height="380dp"
+    >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,9 +13,10 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivThumbMail"
             android:layout_width="0dp"
-            android:layout_height="160dp"
+            android:layout_height="180dp"
+            android:background="#CF3535"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,29 +25,29 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textView"
+            android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/textview"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:textColor="#7986CB"
+            app:layout_constraintBottom_toTopOf="@+id/tvDescricao"
+            app:layout_constraintEnd_toEndOf="@+id/ivThumbMail"
+            app:layout_constraintStart_toStartOf="@+id/ivThumbMail"
+            app:layout_constraintTop_toBottomOf="@+id/ivThumbMail" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvDescricao"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:text="@string/textview1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/ivThumbMail" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
@@ -54,24 +55,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:text="@string/buttonNews"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDescricao" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:contentDescription="@string/favorite_icon"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toBottomOf="parent"
-
             app:layout_constraintEnd_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toTopOf="@+id/button"
-            app:srcCompat="@drawable/ic_baseline_favorite_24" />
+            app:srcCompat="@drawable/ic_baseline_favorite_24"
+            />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -79,6 +84,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/share_icon"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView3"

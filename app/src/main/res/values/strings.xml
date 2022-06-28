@@ -8,4 +8,13 @@
     <string name="buttonNews">Button</string>
     <string name="favorite_icon">Favorite icon</string>
     <string name="share_icon">Share icon</string>
+    <string name="content_description_media">Descrição da imagem</string>
+    <string name="title1">Titulo 1</string>
+    <string name="title2">Titulo 2</string>
+    <string name="title3">Titulo 3</string>
+    <string name="action_1">Ação 1</string>
+    <string name="action_2">Ação 2</string>
+    <string name="cardview_contents" >Conteúdo CARD VIEW</string>
+    <string name="cardview_radius_seekbar_text">CARDVIEW RADIUS SEEK BAR</string>
+    <string name="cardview_elevation_seekbar_text">CARDVIEW ELEVATION SEEKBAR</string>
 </resources>

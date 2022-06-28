@@ -22,16 +22,15 @@ public class NewsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-
         NewsViewModel newsViewModel =
                 new ViewModelProvider(this).get(NewsViewModel.class);
-        binding = FragmentNewsBinding.inflate(inflater,container, false);
+        binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         binding.rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
         newsViewModel.getNews().observe(getViewLifecycleOwner(), news -> {
             binding.rvNews.setAdapter(new NewsAdapter(news));
         });
-
+        binding.srlMatches.setRefreshing(false);
         return root;
     }
 
@@ -39,5 +38,10 @@ public class NewsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 }
