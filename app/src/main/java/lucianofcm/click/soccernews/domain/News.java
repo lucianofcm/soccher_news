@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 public class News {
 
     @PrimaryKey
-    public int uid;
+    public int id;
     public String titulo;
     public String descricao;
     public String urlImagem;

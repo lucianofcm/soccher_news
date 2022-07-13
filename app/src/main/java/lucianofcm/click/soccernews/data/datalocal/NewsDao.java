@@ -16,10 +16,10 @@ public interface NewsDao {
     @Query("SELECT * FROM news")
     List<News> getAll();
 
-    @Query("SELECT * FROM news")
+    @Query("SELECT * FROM news WHERE favorito = 1")
     LiveData<List<News>> loadFavoritesNews();
 
-    @Query("SELECT * FROM news WHERE uid IN (:userIds)")
+    @Query("SELECT * FROM news WHERE id IN (:userIds)")
     List<News> loadAllByIds(int[] userIds);
 
     @Query("SELECT * FROM news WHERE titulo LIKE :first LIMIT 1")

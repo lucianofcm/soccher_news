@@ -3,12 +3,10 @@ package lucianofcm.click.soccernews.ui.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -37,7 +35,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return new ViewHolder(binding);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
         Context context = holder.itemView.getContext();
