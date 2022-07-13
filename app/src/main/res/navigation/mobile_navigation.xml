@@ -14,9 +14,9 @@
 
     <fragment
         android:id="@+id/navigation_views2"
-        android:name="lucianofcm.click.soccernews.ui.news.NewsFragment2"
+        android:name="lucianofcm.click.soccernews.ui.favorites.FavoritesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_news2" >
+        tools:layout="@layout/fragment_favorites" >
     </fragment>
 
 </navigation>

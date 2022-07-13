@@ -1,55 +1,65 @@
 package lucianofcm.click.soccernews.ui.news;
 
+import android.os.AsyncTask;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import lucianofcm.click.soccernews.data.ApiNews;
 import lucianofcm.click.soccernews.domain.News;
+import lucianofcm.click.soccernews.repos.SoccerNewsRepo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsViewModel extends ViewModel {
 
-    private final MutableLiveData<List<News>> mnews = new MutableLiveData<>();
-    private final ApiNews api;
+    public enum State {
+        DOING, DONE, ERROR;
+    }
+
+    private final MutableLiveData<List<News>> news = new MutableLiveData<>();
+    private final MutableLiveData<State> state = new MutableLiveData<>();
 
     public NewsViewModel() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://lucapi.herokuapp.com/lucapi/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        api = retrofit.create(ApiNews.class);
+
         this.findNews();
     }
 
-    private void findNews() {
-        Call<List<News>> repos = api.listRepos();
-
-        repos.enqueue(new Callback<List<News>>() {
+    public void findNews() {
+        state.setValue(State.DOING);
+        SoccerNewsRepo.getInstance().getRemoteApi().listRepos().enqueue(new Callback<List<News>>() {
             @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+            public void onResponse(@NonNull Call<List<News>> call, @NonNull Response<List<News>> response) {
                 if (response.isSuccessful()) {
-                    mnews.setValue(response.body());
+                    news.setValue(response.body());
+                    state.setValue(State.DONE);
                 } else {
-                    //TODO Pensar em um estratégia de erro.
+                    state.setValue(State.ERROR);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<News>> call, Throwable t) {
-                System.out.println("Erro");
+            public void onFailure(@NonNull Call<List<News>> call, Throwable error) {
+                error.printStackTrace();
+                state.setValue(State.ERROR);
             }
         });
     }
 
-    public LiveData<List<News>> getNews() {
-        return mnews;
+    public void saveNews(News news) {
+        AsyncTask.execute(() -> SoccerNewsRepo.getInstance().getLocalDb().newsDao().update(news));
     }
+
+    public LiveData<List<News>> getNews() {
+        return this.news;
+    }
+
+    public LiveData<State> getState() {
+        return this.state;
+    }
+
 }

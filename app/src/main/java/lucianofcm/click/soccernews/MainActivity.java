@@ -10,16 +10,14 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.util.List;
-
-import lucianofcm.click.soccernews.data.ApiNews;
+import lucianofcm.click.soccernews.data.datalocal.AppDatabase;
 import lucianofcm.click.soccernews.databinding.ActivityMainBinding;
-import retrofit2.Call;
-import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
     }
+
 
     @NonNull
     private NavController getNavController() {

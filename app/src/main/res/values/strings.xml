@@ -17,4 +17,5 @@
     <string name="cardview_contents" >Conteúdo CARD VIEW</string>
     <string name="cardview_radius_seekbar_text">CARDVIEW RADIUS SEEK BAR</string>
     <string name="cardview_elevation_seekbar_text">CARDVIEW ELEVATION SEEKBAR</string>
+    <string name="error_network">Network error.</string>
 </resources>
